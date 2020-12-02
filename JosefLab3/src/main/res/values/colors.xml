@@ -10,5 +10,6 @@
     <color name="colorPrimary">#8BC34A</color>
     <color name="lightgreen">#B8F17E</color>
     <color name="colorPrimaryDark">#03A9F4</color>
-    <color name="colorAccent">#E91E63</color>
+    <color name="colorAccent">#EF3675</color>
+    <color name="colorpink">#F382DA</color>
 </resources>

@@ -11,43 +11,86 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.text.DateFormat;
+import java.util.Calendar;
+
 public class JosefActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    DrawerLayout drawerLayout;
+    DrawerLayout drawer;
     ActionBarDrawerToggle actionBarDrawerToggle;
     Toolbar toolbar;
     NavigationView navigationView;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
 
+    Button btn;
+    TextView textView;
+    int year,month,day;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_josef);
+
+
+
+        drawer = findViewById(R.id.josefdrawer);
         toolbar = findViewById(R.id.joseftoolbar);
-        setSupportActionBar(toolbar);
-
-        drawerLayout = findViewById(R.id.josefdrawer);
         navigationView = findViewById(R.id.josefnavigationView);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.bringToFront();
 
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout,toolbar,R.string.open,R.string.close);
-        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
-        actionBarDrawerToggle.syncState();
-
-        fragmentManager = getSupportFragmentManager();
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.josef_container,new JoHome());
-        fragmentTransaction.commit();
     }
 
     @Override
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        drawerLayout.closeDrawer(GravityCompat.START);
+
+
+        switch (menuItem.getItemId()) {
+            case R.id.joshome:
+                getSupportFragmentManager().beginTransaction().replace(R.id.josef_container,
+                        new JoHome()).commit();
+                break;
+
+            case R.id.josjosef:
+                getSupportFragmentManager().beginTransaction().replace(R.id.josef_container,
+                        new JosDown()).commit();
+                break;
+            case R.id.josranopa:
+                getSupportFragmentManager().beginTransaction().replace(R.id.josef_container,
+                        new RaSrv()).commit();
+                break;
+            case R.id.jossetting:
+                getSupportFragmentManager().beginTransaction().replace(R.id.josef_container,
+                        new RaSet()).commit();
+                break;
+        }
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+}
+
+   /*@Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        drawer.closeDrawer(GravityCompat.START);
+
 
         if(menuItem.getItemId() == R.id.joshome){
             fragmentManager = getSupportFragmentManager();
@@ -78,5 +121,4 @@ public class JosefActivity extends AppCompatActivity implements NavigationView.O
         }
 
         return true;
-    }
-}
+    }*/

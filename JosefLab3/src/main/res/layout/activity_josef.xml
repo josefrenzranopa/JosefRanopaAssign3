@@ -6,25 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".JosefActivity"
     android:id="@+id/josefdrawer"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
     >
 
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/ranopa_toolbar" />
 
-    <include
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/ranopa_content"/>
+        android:layout_height="match_parent">
+
+
+        <FrameLayout
+            android:id="@+id/josef_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/josefnavigationView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/josefnavigationView"
-        app:menu="@menu/ranopa_menu"
-        app:headerLayout="@layout/ranopa_header"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true"/>
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/ranopa_header"
+        app:menu="@menu/ranopa_menu" >
+
+    </com.google.android.material.navigation.NavigationView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include
+            layout="@layout/ranopa_toolbar"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
