@@ -28,15 +28,11 @@ public class JosefActivity extends AppCompatActivity implements NavigationView.O
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
 
-    Button btn;
-    TextView textView;
-    int year,month,day;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_josef);
-
 
 
         drawer = findViewById(R.id.josefdrawer);

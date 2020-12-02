@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">JosefLab3</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
     <string name="josef">Josef</string>
@@ -14,4 +13,18 @@
     <string name="date">date</string>
     <string name="navigation_drawer_open">open</string>
     <string name="navigation_drawer_close">open</string>
+    <string name="set_date">Set Date</string>
+    <string name="textview">TextView</string>
+    <string name="todo">TODO</string>
+
+    <!--list of courses-->
+    <string-array name="Courses">
+    <item>CENG-318-RND</item>
+    <item>HESL-024-D5A</item>
+    <item>CENG-319-RNB</item>
+    <item>ECON-204-DCA</item>
+    <item>NEST-203-RNA</item>
+    </string-array>
+
+
 </resources>
