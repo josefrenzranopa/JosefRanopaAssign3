@@ -16,14 +16,23 @@
     <string name="set_date">Set Date</string>
     <string name="textview">TextView</string>
     <string name="todo">TODO</string>
+    <string name="orange">Orange</string>
+    <string name="brown">Brown</string>
+    <string name="back_to_default">Back to Default</string>
+    <string name="adjust_brightness">Adjust Brightness</string>
+    <string name="portrait_only">Portrait Only</string>
+    <string name="magenta">Magenta</string>
+    <string name="change">Change</string>
+    <string name="save">Save</string>
+    <string name="yellow">Yellow</string>
 
     <!--list of courses-->
     <string-array name="Courses">
-    <item>CENG-318-RND</item>
-    <item>HESL-024-D5A</item>
-    <item>CENG-319-RNB</item>
-    <item>ECON-204-DCA</item>
-    <item>NEST-203-RNA</item>
+        <item>CENG-318-RND</item>
+        <item>HESL-024-D5A</item>
+        <item>CENG-319-RNB</item>
+        <item>ECON-204-DCA</item>
+        <item>NEST-203-RNA</item>
     </string-array>
 
 

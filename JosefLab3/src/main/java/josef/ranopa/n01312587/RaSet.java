@@ -1,64 +1,89 @@
 package josef.ranopa.n01312587;
 
+import android.content.ContentResolver;
+import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.SeekBar;
+import android.widget.Switch;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link RaSet#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class RaSet extends Fragment {
+public class RaSet extends Fragment  {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public RaSet() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment RaSet.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static RaSet newInstance(String param1, String param2) {
-        RaSet fragment = new RaSet();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    Switch aSwitch;
+    SwitchCompat switchCompat;
+    RadioGroup radioGroup;
+    Button changebutton;
+    RadioButton radioButton;
+    SeekBar seekBar;
+    TextView textP;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.ra_set, container, false);
+        View view = inflater.inflate(R.layout.ra_set, container, false);
+        switchCompat = (SwitchCompat) view.findViewById(R.id.josswitch);
+
+        seekBar = (SeekBar) view.findViewById(R.id.seekBar);
+        textP = (TextView) view.findViewById(R.id.josbrightnesstv);
+        ContentResolver resolver = getActivity().getContentResolver();
+        Window window = getActivity().getWindow();
+
+        seekBar.setMax(255);
+        seekBar.setKeyProgressIncrement(1);
+
+
+        radioGroup = (RadioGroup) view.findViewById(R.id.josradioGroup);
+        changebutton = (Button) view.findViewById(R.id.joschange);
+
+
+        changebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                int radioId=radioGroup.getCheckedRadioButtonId();
+                 radioButton=view.findViewById(radioId);
+                switch (radioId){
+                    case R.id.josyellow:
+                        getActivity().getWindow().getDecorView().setBackgroundColor(Color.YELLOW);
+                        break;
+                    case R.id.josmagenta:
+                        getActivity().getWindow().getDecorView().setBackgroundColor(Color.MAGENTA);
+                        break;
+                    default:
+                }
+            }
+        });
+
+        return view;
+
+
     }
 }
+
+ /*   @Override
+    public void onClick(View v) {
+        orange = (RadioButton) v.findViewById(R.id.josorange);
+        brown = (RadioButton) v.findViewById(R.id.josbrown);
+        backtodefault = (RadioButton) v.findViewById(R.id.josdefault);
+
+        if (orange.isClickable()) {
+            Fragment newFragment = new joseforange();
+            newFragment.show(getFragmentManager(), "DatePicker");
+        }
+        if (brown.isChecked()) {
+            DialogFragment newFragment = new josefdatefrag();
+        }
+        if (backtodefault.isChecked()) {
+            DialogFragment newFragment = new josefdatefrag();
+        }
+    } */
