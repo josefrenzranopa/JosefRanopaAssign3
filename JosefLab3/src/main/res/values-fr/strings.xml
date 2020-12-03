@@ -1,0 +1,37 @@
+<resources>
+    <!--Josef Renz Ranopa N01312587-->
+    <string name="app_name">JosefLab3</string>
+    <string name="home">Accueil</string>
+    <string name="josef">Josef</string>
+    <string name="ranopa">Ranopa</string>
+    <string name="settings">Réglages</string>
+    <string name="Open">ouverte</string>
+    <string name="open">ouvert</string>
+    <string name="close">proche</string>
+    <string name="josef_renz_ranopa">Josef Renz Ranopa</string>
+    <string name="n01312587">N01312587</string>
+    <string name="date">Date</string>
+    <string name="navigation_drawer_open">ouverte</string>
+    <string name="navigation_drawer_close">proche</string>
+    <string name="set_date">Régler la date</string>
+    <string name="textview">Affichage</string>
+    <string name="todo">TODO</string>
+    <string name="back_to_default">Retour à la valeur par défaut</string>
+    <string name="adjust_brightness">Ajuster la luminosité</string>
+    <string name="portrait_only">Portrait uniquement</string>
+    <string name="magenta">Magenta</string>
+    <string name="change">Changement</string>
+    <string name="save">sauvegarder</string>
+    <string name="yellow">Jaune</string>
+
+    <!--list of courses-->
+    <string-array name="Courses">
+        <item>CENG-318-RND</item>
+        <item>HESL-024-D5A</item>
+        <item>CENG-319-RNB</item>
+        <item>ECON-204-DCA</item>
+        <item>NEST-203-RNA</item>
+    </string-array>
+
+
+</resources>

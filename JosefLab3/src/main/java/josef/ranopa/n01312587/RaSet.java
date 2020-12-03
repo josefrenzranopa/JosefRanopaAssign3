@@ -1,5 +1,5 @@
 package josef.ranopa.n01312587;
-
+//Josef Renz Ranopa N01312587
 import android.content.ContentResolver;
 import android.graphics.Color;
 import android.os.Bundle;
